@@ -29,6 +29,6 @@ jobs:
         uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
           source_dir: "dist"
-          container_name: "container"
+          container_name: "$web"
           connection_string: ${{ secrets.AZURE_CREDENTIALS }}
           sync: true
