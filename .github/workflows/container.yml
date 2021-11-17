@@ -28,7 +28,7 @@ jobs:
       - name: Deploy Application
         uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
-          source_dir: "dist"
+          source_dir: "/dist/"
           container_name: "$web"
           connection_string: ${{ secrets.AZURE_CREDENTIALS }}
           sync: true
