@@ -20,15 +20,10 @@ jobs:
         env:
           PRODUCT_DOMAIN: ${{ secrets.PRODUCT_DOMAIN }}
 
-      - name: Login to azure
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
       - uses: LanceMcCarthy/Action-AzureBlobUpload@v1.9.0
         name: Azure Blob Upload with Destination folder defined
         with:
           connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
-          container_name: container
+          container_name: web
           source_folder: packages/container/dist/
           clean_destination_folder: true
