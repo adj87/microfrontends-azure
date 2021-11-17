@@ -5,8 +5,8 @@ import { createBrowserHistory } from "history";
 import Header from "./components/Header";
 
 const MarketingLazy = lazy(() => import("./components/MarketingApp"));
-const AuthLazy = lazy(() => import("./components/AuthApp"));
-const DashboardLazy = lazy(() => import("./components/DashboardApp"));
+// const AuthLazy = lazy(() => import("./components/AuthApp"));
+// const DashboardLazy = lazy(() => import("./components/DashboardApp"));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "co"
@@ -33,12 +33,12 @@ export default () => {
           />
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
-              <Route path="/auth">
+              {/*               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSigned(true)} />
               </Route>
               <Route path="/dashboard">
                 <DashboardLazy />
-              </Route>
+              </Route> */}
               <Route path="/" component={MarketingLazy} />
             </Switch>
           </Suspense>
