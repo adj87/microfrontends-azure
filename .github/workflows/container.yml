@@ -25,10 +25,10 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Deploy Application
-        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+      - uses: actions/checkout@v2
+      - uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
-          source_dir: "/dist/"
-          container_name: "$web"
+          source_dir: "dist"
+          container_name: "container"
           connection_string: ${{ secrets.AZURE_CREDENTIALS }}
           sync: true
