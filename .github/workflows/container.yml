@@ -26,9 +26,9 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy Application
-      - uses: actions/checkout@v2
-      - uses: chabad360/hugo-actions@master
-      - uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+        uses: actions/checkout@v2
+        uses: chabad360/hugo-actions@master
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
           source_dir: "dist"
           container_name: "container"
