@@ -29,10 +29,10 @@ jobs:
           clean_destination_folder: true
 
       - uses: LanceMcCarthy/Action-AzureBlobUpload@v1.9.0
-      name: Azure Blob Upload with Destination folder defined in container app
-      with:
-        connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
-        container_name: container
-        source_folder: packages/container/dist/
-        clean_destination_folder: true
-        destination_folder: latest/
+        name: Azure Blob Upload with Destination folder defined in container app
+        with:
+          connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
+          container_name: container
+          source_folder: packages/container/dist/
+          clean_destination_folder: true
+          destination_folder: latest/
