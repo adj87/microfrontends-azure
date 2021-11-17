@@ -28,7 +28,7 @@ jobs:
       - uses: LanceMcCarthy/Action-AzureBlobUpload@v1.9.0
         name: Azure Blob Upload with Destination folder defined
         with:
-          connection_string: ${{ secrets.AZURE_CREDENTIALS }}
+          connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
           container_name: container
           source_folder: build\
           clean_destination_folder: true
