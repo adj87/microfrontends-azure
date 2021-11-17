@@ -25,10 +25,10 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - uses: LanceMcCarthy/Action-AzureBlobUpload@vX.X.X
+      - uses: LanceMcCarthy/Action-AzureBlobUpload@v1.9.0
         name: Azure Blob Upload with Destination folder defined
         with:
           connection_string: ${{ secrets.AZURE_CREDENTIALS }}
           container_name: container
-          source_folder: build\
+          source_folder: build
           clean_destination_folder: true
