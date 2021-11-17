@@ -24,7 +24,7 @@ jobs:
         name: Azure Blob Upload with Destination folder defined
         with:
           connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
-          container_name: $web
+          container_name: marketing
           source_folder: packages/marketing/dist/
           clean_destination_folder: true
-          destination_folder: marketing/latest/
+          destination_folder: latest/
