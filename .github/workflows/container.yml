@@ -27,4 +27,4 @@ jobs:
           container_name: $web
           source_folder: packages/container/dist/
           clean_destination_folder: true
-          destination_folder:
+          is_recursive: false
