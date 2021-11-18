@@ -33,12 +33,12 @@ export default () => {
           />
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
-              {/*               <Route path="/auth">
+              <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSigned(true)} />
               </Route>
               <Route path="/dashboard">
                 <DashboardLazy />
-              </Route> */}
+              </Route>
               <Route path="/" component={MarketingLazy} />
             </Switch>
           </Suspense>

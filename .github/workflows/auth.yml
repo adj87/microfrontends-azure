@@ -1,0 +1,30 @@
+name: deploy-auth
+
+on:
+  push:
+    branches:
+      - master
+
+defaults:
+  run:
+    working-directory: packages/auth
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run build
+        env:
+          PRODUCT_DOMAIN: ${{ secrets.PRODUCT_DOMAIN }}
+
+      - uses: LanceMcCarthy/Action-AzureBlobUpload@v1.9.0
+        name: Azure Blob Upload with Destination folder defined
+        with:
+          connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
+          container_name: $web
+          source_folder: packages/auth/dist/
+          clean_destination_folder: true
+          destination_folder: auth/latest
